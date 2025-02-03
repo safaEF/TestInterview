@@ -1,0 +1,45 @@
+.Box-Container {
+    width: 150px;
+    height: 150px;
+    position: relative;
+
+    .TopLine {
+        height: 15px;
+        background: lightgray;
+        width: calc(100% - 15px);
+        display: inline-block;
+        float: right;
+    }
+
+    .botLine {
+        width: 100%;
+        height: 15px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        gap: 4px;
+
+        div{
+            background: lightgray;
+            height: 15px;
+            width: 35px;
+        }
+    }
+}
+
+// .Box-Container {
+//     display: flex;
+//     flex-direction: row;
+//     border: 1px solid black;
+//     width: 50px;
+//     padding: 50px;
+//     margin: 20px;
+
+//  .TopLine {
+//     width: 50px;
+//     padding: 20px;
+//     outline: 1px solid black;
+//     outline-offset: 30px;
+//  }
+// }
