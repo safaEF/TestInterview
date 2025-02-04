@@ -1,0 +1,41 @@
+app-box.selected{
+    background-color:#0080006b;
+}
+
+app-key-board {
+    display: flex;
+    position: fixed;
+    top: 12rem;
+    align-items: center;
+    padding: 10px;
+    width: 80%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+  }
+
+  .total{
+    position: relative;
+    top: 25px;
+
+    .button {
+      background-color: #04AA6D;
+      border-radius: 4px;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  
+    .title {
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  }
+ 

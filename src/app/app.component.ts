@@ -7,7 +7,7 @@ import { BoxLineComponent } from './box-line/box-line.component';
   standalone: true,
   imports: [
     RouterOutlet,
-    BoxLineComponent
+    BoxLineComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

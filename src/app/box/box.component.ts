@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AppService } from '../app.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-box',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './box.component.html',
   styleUrl: './box.component.scss'
 })
 export class BoxComponent {
-
+  
+@Input() index: number = 0;
 }

@@ -1,1 +1,35 @@
-<p>key-board works!</p>
+<div class="all">
+  <!-- <app-key-board> -->
+    <div class="row-container">
+      <!-- Front Section -->
+      <div class="section">
+        <div class="title">Front</div>
+        <div class="list-container">
+          @for (front of frontList; track front) {
+            <div class="list-item">{{ front }}</div>
+          }
+        </div>
+      </div>
+
+      <!-- Back Section -->
+      <div class="section">
+        <div class="title">Back</div>
+        <div class="list-container">
+          @for (back of backList; track back) {
+            <div class="list-item">{{ back }}</div>
+          }
+        </div>
+      </div>
+
+      <!-- Other Section -->
+      <div class="section">
+        <div class="title">Other</div>
+        <div class="list-container">
+          @for (other of otherList; track other) {
+            <div class="list-item">{{ other }}</div>
+          }
+        </div>
+      </div>
+    </div>
+  <!-- </app-key-board> -->
+</div>

@@ -1,4 +1,14 @@
 @for (box of boxes; track box){
-    <app-box></app-box>
+    <app-box (click)="selectBox(box)"
+    [index]="box"
+    [ngClass]="{'selected': box == selected}"
+    ></app-box>
 }
+
+<div class="total">
+    <button class="button">Button</button>
+    <div class="title">Total value: </div>
+</div>
+    <app-key-board></app-key-board>
+
 
