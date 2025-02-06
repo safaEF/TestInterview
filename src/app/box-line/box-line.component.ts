@@ -55,4 +55,10 @@ selectBox(box: Box){
   this.appService.selectedBox.next(box)
 }
 
+clearAll (){
+  this.boxes.forEach(box => box.clear())
+  this.totalScore = 0
+  this.appService.selectedBox.next(this.boxes[0])
+}
+
 }
