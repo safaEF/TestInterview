@@ -6,7 +6,7 @@
         <div class="title">Front</div>
         <div class="list-container">
           @for (front of frontList; track front) {
-            <div class="list-item">{{ front }}</div>
+            <button class="list-item">{{ front }}</button>
           }
         </div>
       </div>
@@ -16,7 +16,7 @@
         <div class="title">Back</div>
         <div class="list-container">
           @for (back of backList; track back) {
-            <div class="list-item">{{ back }}</div>
+            <button class="list-item">{{ back }}</button>
           }
         </div>
       </div>
@@ -26,7 +26,7 @@
         <div class="title">Other</div>
         <div class="list-container">
           @for (other of otherList; track other) {
-            <div class="list-item">{{ other }}</div>
+            <button class="list-item">{{ other }}</button>
           }
         </div>
       </div>
