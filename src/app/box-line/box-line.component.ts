@@ -19,7 +19,7 @@ export class BoxLineComponent {
   boxes : Box[] = []
 
  selected! : number;
-
+ totalScore = 0;
 
  
  constructor(
@@ -37,7 +37,7 @@ export class BoxLineComponent {
 
   this.appService.keyboardStream.subscribe(value => {
     if(value == "") return;
-    
+
     console.log("key : ", value);
     this.appService.setValueToCurrentBox(value)
 
@@ -45,6 +45,8 @@ export class BoxLineComponent {
     //increment box selection
     let nextBox = this.boxes.find(box => box.index == this.selected+1)
     if(nextBox) this.selectBox(nextBox)
+
+      this.totalScore = this.boxes.reduce((total, box) => total + box.score, 0)
 
   })
 }
