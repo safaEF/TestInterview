@@ -18,7 +18,7 @@ export class KeyBoardComponent {
   ) { }
 
   setValueToStream(value : string){
-    this.appService.setValueToCurrentBox(value)
+    this.appService.keyboardStream.next(value)
   }
 }
 
