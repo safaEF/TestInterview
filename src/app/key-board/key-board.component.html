@@ -6,7 +6,7 @@
         <div class="title">Front</div>
         <div class="list-container">
           @for (front of frontList; track front) {
-            <button class="list-item">{{ front }}</button>
+            <button class="list-item" (click)="setValueToStream(front)">{{ front }}</button>
           }
         </div>
       </div>
@@ -16,7 +16,7 @@
         <div class="title">Back</div>
         <div class="list-container">
           @for (back of backList; track back) {
-            <button class="list-item">{{ back }}</button>
+            <button class="list-item" (click)="setValueToStream(back)">{{ back }}</button>
           }
         </div>
       </div>
@@ -26,7 +26,7 @@
         <div class="title">Other</div>
         <div class="list-container">
           @for (other of otherList; track other) {
-            <button class="list-item">{{ other }}</button>
+            <button class="list-item" (click)="setValueToStream(other)">{{ other }}</button>
           }
         </div>
       </div>

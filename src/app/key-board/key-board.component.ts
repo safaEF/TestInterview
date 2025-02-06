@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-key-board',
@@ -12,11 +13,17 @@ export class KeyBoardComponent {
   backList  = [".-0", ".-<", ".1", ".2", ".3", ".4", ".--o", ".--<", ".-0", ".-<", ".1", ".2", ".3", ".4", ".--o", ".--<", ".-0", ".-<", ".1", ".2", ".3", ".4", ".--o", ".--<"]
   otherList = [".-0", ".-<", ".1", ".2", ".3", ".4", ".--o", ".--<"]
 
-  constructor() { }
+  constructor(
+    private appService: AppService
+  ) { }
+
+  setValueToStream(value : string){
+    this.appService.setValueToCurrentBox(value)
+  }
 }
 
 
-export enum KeyButton {
+export enum KeyScore {
   '.-0' = 0.7,
   '.-<' = 0.5,
   '.1' = 2.5,

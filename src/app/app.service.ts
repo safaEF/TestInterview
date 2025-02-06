@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { KeyButton } from './key-board/KeyBoard';
+import { KeyScore } from './key-board/key-board.component';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +13,13 @@ export class AppService {
   keyboardStream : BehaviorSubject<string> = new BehaviorSubject<string>("");
  
   constructor() { }
+
+  setValueToCurrentBox(value : string){
+    this.selectedBox.value.setValue({
+      value : value,
+      score :  (KeyScore[value as any] as any)// get score from KeyButton enum
+    })
+  }
 }
 
 
