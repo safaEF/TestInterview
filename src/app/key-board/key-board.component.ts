@@ -14,3 +14,15 @@ export class KeyBoardComponent {
 
   constructor() { }
 }
+
+
+export enum KeyButton {
+  '.-0' = 0.7,
+  '.-<' = 0.5,
+  '.1' = 2.5,
+  '.2' = 0.4,
+  '.3' = 1.5,
+  '.4' = 0.3,
+  '.--o' = 0.8,
+  '.--<' = 1.2
+}
