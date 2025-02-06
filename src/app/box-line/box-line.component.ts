@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
-import { AppService } from '../app.service';
+import { AppService, Box } from '../app.service';
 import { CommonModule } from '@angular/common';
-import { KeyBoardComponent } from '../key-board/key-board.component';
 
 @Component({
   selector: 'app-box-line',
   standalone: true,
   imports: [
     BoxComponent,
-    CommonModule,
-    KeyBoardComponent
+    CommonModule
   ],
   templateUrl: './box-line.component.html',
   styleUrl: './box-line.component.scss'
 })
 export class BoxLineComponent {
- boxes = [0,1,2,3,4,5,6,7,8,9]
+ boxesIndexs = [0,1,2,3,4,5,6,7,8,9]
+  boxes : Box[] = []
+
  selected : number = 0;
 
 
@@ -24,12 +24,17 @@ export class BoxLineComponent {
  constructor(
   private appService: AppService
 ) { 
+
+  this.boxes = this.boxesIndexs.map((index) => new Box(index))
+
+  this.appService.selectedBox.subscribe(box => {
+    this.selected = box.index
+    console.log(box);
+  })
 }
 
-selectBox(box: number){
-  this.appService.selectedBox = box;
-  this.selected = box
-  console.log(box);
+selectBox(box: Box){
+  this.appService.selectedBox.next(box)
   
 }
 
