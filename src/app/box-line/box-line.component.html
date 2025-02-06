@@ -1,6 +1,6 @@
 @for (box of boxes; track box.index){
     <app-box (click)="selectBox(box)"
-    [index]="box.index"
+    [box]="box"
     [ngClass]="{'selected': box.index == selected}"
     ></app-box>
 }

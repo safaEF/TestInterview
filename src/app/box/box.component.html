@@ -1,10 +1,10 @@
 <div class="Box-Container" >
     <div class="boxIndex">
-        {{index}}
+        {{box.index}}
         <div class="TopLine"></div></div>
     
     <div class="boxBody">
-        select element
+        {{  box.value? box.value:'select element'}}
     </div>
     <div class="botLine">
         <div></div>
@@ -13,3 +13,5 @@
         <div></div>
     </div>
   </div>
+<!-- 
+  condition?true:false; -->

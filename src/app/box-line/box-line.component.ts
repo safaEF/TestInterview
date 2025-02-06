@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
 import { AppService, Box } from '../app.service';
 import { CommonModule } from '@angular/common';
+import { skip } from 'rxjs';
 
 @Component({
   selector: 'app-box-line',
@@ -27,7 +28,9 @@ export class BoxLineComponent {
 
   this.boxes = this.boxesIndexs.map((index) => new Box(index))
 
-  this.appService.selectedBox.subscribe(box => {
+  this.appService.selectedBox.pipe(
+    skip(1)
+  ).subscribe(box => {
     this.selected = box.index
     console.log(box);
   })
