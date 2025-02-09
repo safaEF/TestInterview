@@ -1,5 +1,4 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { Injectable, signal } from '@angular/core';
 import { Box } from './models/Box';
 import { KeyScore } from './models/KeyScore';
 
@@ -8,17 +7,20 @@ import { KeyScore } from './models/KeyScore';
 })
 export class AppService {
 
- selectedBox : BehaviorSubject<Box> = new BehaviorSubject<any>(null);
-
-  keyboardStream : BehaviorSubject<string> = new BehaviorSubject<string>("");
- 
+  selectedBox = signal<Box | null>(null);
+  keyboardStream = signal<string>("");
+  
   constructor() { }
 
-  setValueToCurrentBox(value : string){
-    this.selectedBox.value.setValue({
-      value : value,
-      score :  (KeyScore[value as any] as any)
-    })
+  setValueToCurrentBox(value: string) {
+    const currentBox = this.selectedBox();
+    if (currentBox) {
+      currentBox.setValue({
+        value: value,
+        score: KeyScore[value as any] as any
+      });
+      this.selectedBox.set(currentBox);
+    }
   }
 }
 

@@ -6,7 +6,7 @@ import { AppService } from '../app.service';
   standalone: true,
   imports: [],
   templateUrl: './key-board.component.html',
-  styleUrl: './key-board.component.scss'
+  styleUrl: './key-board.component.scss',
 })
 export class KeyBoardComponent {
   frontList = [".-0", ".-<", ".1", ".2", ".3", ".4", ".--o", ".--<"]
@@ -18,7 +18,7 @@ export class KeyBoardComponent {
   ) { }
 
   setValueToStream(value : string){
-    this.appService.keyboardStream.next(value)
+    this.appService.keyboardStream.set(value)
   }
 }
 
