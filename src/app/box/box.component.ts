@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { AppService, Box } from '../app.service';
+import { AppService } from '../app.service';
 import { CommonModule } from '@angular/common';
+import { Box } from '../models/Box';
 
 @Component({
   selector: 'app-box',
@@ -15,7 +16,5 @@ export class BoxComponent {
   
 @Input() box! : Box;
 
-  constructor(private appService : AppService){
-    console.log(this.box);
-  }
+  constructor(private appService : AppService){}
 }

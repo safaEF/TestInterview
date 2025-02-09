@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { BoxComponent } from '../box/box.component';
-import { AppService, Box } from '../app.service';
+import { AppService } from '../app.service';
 import { CommonModule } from '@angular/common';
 import { skip } from 'rxjs';
+import { Box } from '../models/Box';
 
 @Component({
   selector: 'app-box-line',
@@ -40,7 +41,6 @@ export class BoxLineComponent {
 
     console.log("key : ", value);
     this.appService.setValueToCurrentBox(value)
-
 
     //increment box selection
     let nextBox = this.boxes.find(box => box.index == this.selected+1)
