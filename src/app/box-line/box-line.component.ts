@@ -39,7 +39,7 @@ export class BoxLineComponent {
   this.appService.keyboardStream.subscribe(value => {
     if(value == "") return;
 
-    console.log("key : ", value);
+    // console.log("key : ", value);
     this.appService.setValueToCurrentBox(value)
 
     //increment box selection
