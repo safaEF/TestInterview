@@ -17,6 +17,7 @@ export class KeyBoardComponent {
     private appService: AppService
   ) { }
 
+  // update the keyBoardStream with the new value 
   setValueToStream(value : string){
     this.appService.keyboardStream.set(value)
   }

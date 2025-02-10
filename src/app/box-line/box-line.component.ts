@@ -33,6 +33,7 @@ export class BoxLineComponent {
       }
     }, { allowSignalWrites: true });
 
+    // Effect to handle keyboard input and update the selected box 
     effect(() => {
       const value = this.appService.keyboardStream();
       if (value === "") return;
@@ -51,6 +52,7 @@ export class BoxLineComponent {
     }, { allowSignalWrites: true });
   }
 
+  // update the selectedBox in the service
   selectBox(box: Box) {
     this.appService.selectedBox.set(box);
   }

@@ -16,5 +16,5 @@ export class BoxComponent {
   
 @Input() box! : Box;
 
-  constructor(private appService : AppService){}
+  constructor(){}
 }
